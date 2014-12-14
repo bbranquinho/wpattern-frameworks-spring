@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="br.com.wpattern.frameworks.spring" />
+
+	<bean id="descriptionFPU" class="java.lang.String">
+		<constructor-arg value="Universidade politécnica da cidade de uberlândia." />
+	</bean>
+
+	<bean name="fpu" class="br.com.wpattern.frameworks.spring.beans.UniversityBean">
+		<property name="university" value="FPU" />
+		<property name="description" ref="descriptionFPU" />
+	</bean>
+	
+	<bean name="ufu" class="br.com.wpattern.frameworks.spring.beans.UniversityBean">
+		<property name="university" value="UFU" />
+		<property name="description" value="Universidade federal da cidade de uberlândia." />
+	</bean>
+
+</beans>
